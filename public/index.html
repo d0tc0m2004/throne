@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throne - Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>THRONE</h1>
+        
+        <!-- Lobby Screen -->
+        <div class="lobby" id="lobby">
+            <div class="lobby-content">
+                <h2>Play Online</h2>
+                
+                <button id="create-room-btn" class="lobby-btn create-btn">Create Room</button>
+                
+                <div class="divider">or</div>
+                
+                <div class="join-section">
+                    <input type="text" id="room-code-input" placeholder="Enter Room Code" maxlength="4">
+                    <button id="join-room-btn" class="lobby-btn join-btn">Join Room</button>
+                </div>
+                
+                <p class="error-message" id="error-message"></p>
+            </div>
+        </div>
+        
+        <!-- Waiting Screen -->
+        <div class="waiting-screen" id="waiting-screen">
+            <div class="waiting-content">
+                <h2>Waiting for opponent...</h2>
+                <div class="room-code-display">
+                    <span>Room Code:</span>
+                    <span class="code" id="display-room-code">XXXX</span>
+                </div>
+                <p>Share this code with your friend!</p>
+                <button id="copy-code-btn" class="lobby-btn">Copy Code</button>
+                <div class="loader"></div>
+            </div>
+        </div>
+        
+        <!-- Game Screen -->
+        <div class="game-screen" id="game-screen">
+            <div class="game-info">
+                <div class="player-info player1-info">
+                    <span class="player-name">White</span>
+                    <span class="sacrifice-status" id="p1-sacrifice">Sacrifice Ready</span>
+                </div>
+                <div class="turn-indicator" id="turn-indicator">White's Turn</div>
+                <div class="player-info player2-info">
+                    <span class="player-name">Black</span>
+                    <span class="sacrifice-status" id="p2-sacrifice">Sacrifice Ready</span>
+                </div>
+            </div>
+            
+            <div class="your-color" id="your-color">You are: White</div>
+
+            <div class="board-container">
+                <div class="board" id="board"></div>
+            </div>
+
+            <div class="controls">
+                <button id="sacrifice-btn" class="sacrifice-btn">Sacrifice Mode</button>
+                <button id="leave-btn" class="leave-btn">Leave Game</button>
+            </div>
+
+            <div class="sacrifice-panel" id="sacrifice-panel">
+                <h3>Choose Sacrifice Effect</h3>
+                <div class="sacrifice-options">
+                    <button class="sacrifice-option" data-effect="double-move">
+                        <strong>Sacrifice Soldier</strong>
+                        <span>Champion moves twice this turn</span>
+                    </button>
+                    <button class="sacrifice-option" data-effect="king-shield">
+                        <strong>Sacrifice Tower</strong>
+                        <span>King immune for 1 turn</span>
+                    </button>
+                    <button class="sacrifice-option" data-effect="instant-kill">
+                        <strong>Sacrifice Champion</strong>
+                        <span>Kill any adjacent enemy</span>
+                    </button>
+                </div>
+                <button id="cancel-sacrifice" class="cancel-btn">Cancel</button>
+            </div>
+
+            <div class="message-overlay" id="message-overlay">
+                <div class="message-content">
+                    <h2 id="message-text"></h2>
+                    <div class="message-buttons">
+                        <button id="rematch-btn">Request Rematch</button>
+                        <button id="leave-end-btn">Leave</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="notification" id="notification"></div>
+        </div>
+
+        <div class="rules">
+            <h3>How to Play</h3>
+            <p><strong>Win:</strong> Capture enemy King OR get your King to opponent's back row</p>
+            <p><strong>Pieces:</strong></p>
+            <ul>
+                <li><strong>King (K)</strong> - Moves 1 square any direction</li>
+                <li><strong>Champion (C)</strong> - Moves like Queen, max 2 squares</li>
+                <li><strong>Tower (T)</strong> - Moves like Rook, max 3 squares</li>
+                <li><strong>Soldier (S)</strong> - Moves 1 square forward or sideways</li>
+            </ul>
+            <p><strong>Sacrifice:</strong> Once per game, sacrifice a piece for a powerful effect!</p>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

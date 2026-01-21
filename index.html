@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throne</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>THRONE</h1>
+        
+        <div class="game-info">
+            <div class="player-info player1-info">
+                <span class="player-name">White</span>
+                <span class="sacrifice-status" id="p1-sacrifice">Sacrifice Ready</span>
+            </div>
+            <div class="turn-indicator" id="turn-indicator">White's Turn</div>
+            <div class="player-info player2-info">
+                <span class="player-name">Black</span>
+                <span class="sacrifice-status" id="p2-sacrifice">Sacrifice Ready</span>
+            </div>
+        </div>
+
+        <div class="board-container">
+            <div class="board" id="board"></div>
+        </div>
+
+        <div class="controls">
+            <button id="sacrifice-btn" class="sacrifice-btn">Sacrifice Mode</button>
+            <button id="reset-btn" class="reset-btn">New Game</button>
+        </div>
+
+        <div class="sacrifice-panel" id="sacrifice-panel">
+            <h3>Choose Sacrifice Effect</h3>
+            <div class="sacrifice-options">
+                <button class="sacrifice-option" data-effect="double-move">
+                    <strong>Sacrifice Soldier</strong>
+                    <span>Champion moves twice this turn</span>
+                </button>
+                <button class="sacrifice-option" data-effect="king-shield">
+                    <strong>Sacrifice Tower</strong>
+                    <span>King immune for 1 turn</span>
+                </button>
+                <button class="sacrifice-option" data-effect="instant-kill">
+                    <strong>Sacrifice Champion</strong>
+                    <span>Kill any adjacent enemy</span>
+                </button>
+            </div>
+            <button id="cancel-sacrifice" class="cancel-btn">Cancel</button>
+        </div>
+
+        <div class="message-overlay" id="message-overlay">
+            <div class="message-content">
+                <h2 id="message-text"></h2>
+                <button id="message-close">Play Again</button>
+            </div>
+        </div>
+
+        <div class="rules">
+            <h3>How to Play</h3>
+            <p><strong>Win:</strong> Capture enemy King OR get your King to opponent's back row</p>
+            <p><strong>Pieces:</strong></p>
+            <ul>
+                <li><strong>King (K)</strong> - Moves 1 square any direction</li>
+                <li><strong>Champion (C)</strong> - Moves like Queen, max 2 squares</li>
+                <li><strong>Tower (T)</strong> - Moves like Rook, max 3 squares</li>
+                <li><strong>Soldier (S)</strong> - Moves 1 square forward or sideways</li>
+            </ul>
+            <p><strong>Sacrifice:</strong> Once per game, sacrifice a piece for a powerful effect!</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
