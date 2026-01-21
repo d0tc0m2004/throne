@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throne - How to Play</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            color: #ffd700;
+            letter-spacing: 0.3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .game-link {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .game-link a {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .game-link p {
+            color: rgba(255,255,255,0.8);
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+        
+        h2 {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        h3 {
+            color: #a0a0ff;
+            font-size: 1.2rem;
+            margin: 20px 0 10px 0;
+        }
+        
+        p {
+            margin-bottom: 12px;
+        }
+        
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .steps {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 25px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .steps ol {
+            margin-left: 20px;
+        }
+        
+        .steps li {
+            margin-bottom: 10px;
+        }
+        
+        .board-diagram {
+            background: #2d2d44;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .board-diagram .black { color: #ff6b6b; }
+        .board-diagram .white { color: #69db7c; }
+        .board-diagram .label { color: #888; font-size: 0.9rem; }
+        
+        .pieces-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .piece-card {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .piece-card h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .piece-card h4 span {
+            background: #667eea;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        
+        .piece-card p {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        .sacrifice-section {
+            background: linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(245, 87, 108, 0.1) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 1px solid rgba(245, 87, 108, 0.3);
+        }
+        
+        .sacrifice-section h3 {
+            color: #f5576c;
+            margin-top: 0;
+        }
+        
+        .sacrifice-option {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .sacrifice-option strong {
+            color: #f093fb;
+        }
+        
+        .win-conditions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .win-card {
+            background: rgba(74, 156, 93, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(74, 156, 93, 0.4);
+        }
+        
+        .win-card h4 {
+            color: #4a9c5d;
+            margin-bottom: 8px;
+        }
+        
+        .tips {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .tips ul {
+            margin-left: 20px;
+        }
+        
+        .tips li {
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                color: black;
+                padding: 20px;
+            }
+            
+            .container {
+                box-shadow: none;
+                background: white;
+            }
+            
+            h1, h2, h3 { color: #333; }
+            .subtitle { color: #666; }
+            .piece-card, .sacrifice-option, .steps, .tips, .win-card {
+                background: #f5f5f5;
+                border: 1px solid #ddd;
+            }
+            .game-link {
+                background: #f0f0f0;
+                border: 2px solid #333;
+            }
+            .game-link a { color: #333; }
+        }
+        
+        @media (max-width: 600px) {
+            .pieces-grid, .win-conditions {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 { font-size: 2rem; }
+            .container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>THRONE</h1>
+        <p class="subtitle">A fast-paced tactical chess variant</p>
+        
+        <div class="game-link">
+            <a href="https://throne-i35f.onrender.com/" target="_blank">https://throne-i35f.onrender.com/</a>
+            <p>Click to play online with friends!</p>
+        </div>
+        
+        <h2>How to Start a Game</h2>
+        <div class="steps">
+            <ol>
+                <li><strong>Player 1:</strong> Open the link and click <span class="highlight">"Create Room"</span></li>
+                <li>You'll get a 4-letter code (e.g., <span class="highlight">AB3X</span>) - share this with your friend</li>
+                <li><strong>Player 2:</strong> Open the same link, enter the code, and click <span class="highlight">"Join Room"</span></li>
+                <li>Game starts automatically! White moves first.</li>
+            </ol>
+        </div>
+        
+        <h2>The Board</h2>
+        <p>Throne is played on a <span class="highlight">5x5 board</span> - smaller than chess, but every move counts!</p>
+        
+        <div class="board-diagram">
+            <span class="label">Black's side (Row 0)</span><br>
+            <span class="black">S &nbsp; C &nbsp; K &nbsp; T &nbsp; S</span><br>
+            <span style="color:#555">·  &nbsp; ·  &nbsp; ·  &nbsp; ·  &nbsp; · </span><br>
+            <span style="color:#555">·  &nbsp; ·  &nbsp; ·  &nbsp; ·  &nbsp; · </span><br>
+            <span style="color:#555">·  &nbsp; ·  &nbsp; ·  &nbsp; ·  &nbsp; · </span><br>
+            <span class="white">S &nbsp; T &nbsp; K &nbsp; C &nbsp; S</span><br>
+            <span class="label">White's side (Row 4)</span>
+        </div>
+        
+        <h2>Win Conditions</h2>
+        <p>There are <span class="highlight">two ways to win</span>:</p>
+        
+        <div class="win-conditions">
+            <div class="win-card">
+                <h4>Capture the King</h4>
+                <p>Take your opponent's King piece, just like checkmate in chess.</p>
+            </div>
+            <div class="win-card">
+                <h4>Reach the Throne</h4>
+                <p>Get YOUR King to the opponent's back row (White to row 0, Black to row 4).</p>
+            </div>
+        </div>
+        
+        <h2>The Pieces</h2>
+        <div class="pieces-grid">
+            <div class="piece-card">
+                <h4><span>K</span> King</h4>
+                <p>Moves 1 square in any direction (same as chess). Protect it, or race it to victory!</p>
+            </div>
+            <div class="piece-card">
+                <h4><span>C</span> Champion</h4>
+                <p>Moves like a Queen, but <strong>max 2 squares</strong>. Your most powerful attacker.</p>
+            </div>
+            <div class="piece-card">
+                <h4><span>T</span> Tower</h4>
+                <p>Moves like a Rook (straight lines), but <strong>max 3 squares</strong>. Great for controlling lanes.</p>
+            </div>
+            <div class="piece-card">
+                <h4><span>S</span> Soldier</h4>
+                <p>Moves 1 square <strong>forward or sideways</strong> only. No backward, no diagonal. Simple but useful!</p>
+            </div>
+        </div>
+        
+        <h2>The Sacrifice System</h2>
+        <div class="sacrifice-section">
+            <h3>Once Per Game - Use It Wisely!</h3>
+            <p>Each player can use <strong>one sacrifice</strong> per game. Click the "Sacrifice Mode" button on your turn to activate one of these powerful effects:</p>
+            
+            <div class="sacrifice-option">
+                <strong>Sacrifice Soldier → Champion Double Move</strong><br>
+                <span style="color:#aaa">Remove one of your Soldiers from the board. Your Champion can move twice this turn!</span>
+            </div>
+            
+            <div class="sacrifice-option">
+                <strong>Sacrifice Tower → King Shield</strong><br>
+                <span style="color:#aaa">Remove your Tower from the board. Your King cannot be captured for one full turn (until your next turn).</span>
+            </div>
+            
+            <div class="sacrifice-option">
+                <strong>Sacrifice Champion → Instant Kill</strong><br>
+                <span style="color:#aaa">Remove your Champion from the board. Instantly eliminate any enemy piece adjacent to one of your pieces.</span>
+            </div>
+        </div>
+        
+        <h2>Strategy Tips</h2>
+        <div class="tips">
+            <ul>
+                <li><strong>The King race is real</strong> - Sometimes attacking is the best defense. If your King is closer to their back row, they have to stop you!</li>
+                <li><strong>Champions are valuable</strong> - Don't trade your Champion carelessly. It controls a lot of space on this small board.</li>
+                <li><strong>Soldiers can block</strong> - Use them to protect your King or block enemy paths.</li>
+                <li><strong>Save your sacrifice</strong> - The threat of a sacrifice can be as powerful as using it. Your opponent has to play around it.</li>
+                <li><strong>Tower lanes</strong> - A Tower can control an entire row or column. Position it wisely.</li>
+            </ul>
+        </div>
+        
+        <h2>Controls</h2>
+        <div class="steps">
+            <ul style="list-style: none; margin: 0;">
+                <li><span class="highlight">Click a piece</span> → Select it (shows valid moves)</li>
+                <li><span class="highlight">Click a highlighted square</span> → Move there</li>
+                <li><span class="highlight">Green dots</span> → Valid moves</li>
+                <li><span class="highlight">Red squares</span> → Capture moves</li>
+                <li><span class="highlight">Blue glow on King</span> → King is immune (sacrifice active)</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>Games are fast (5-10 minutes). Have fun!</p>
+            <p style="margin-top:10px"><strong>https://throne-i35f.onrender.com/</strong></p>
+        </div>
+    </div>
+</body>
+</html>

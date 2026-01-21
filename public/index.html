@@ -99,17 +99,112 @@
             <div class="notification" id="notification"></div>
         </div>
 
-        <div class="rules">
-            <h3>How to Play</h3>
-            <p><strong>Win:</strong> Capture enemy King OR get your King to opponent's back row</p>
-            <p><strong>Pieces:</strong></p>
-            <ul>
-                <li><strong>King (K)</strong> - Moves 1 square any direction</li>
-                <li><strong>Champion (C)</strong> - Moves like Queen, max 2 squares</li>
-                <li><strong>Tower (T)</strong> - Moves like Rook, max 3 squares</li>
-                <li><strong>Soldier (S)</strong> - Moves 1 square forward or sideways</li>
-            </ul>
-            <p><strong>Sacrifice:</strong> Once per game, sacrifice a piece for a powerful effect!</p>
+        <button id="how-to-play-btn" class="how-to-play-btn">How to Play</button>
+
+        <!-- How to Play Modal -->
+        <div class="guide-overlay" id="guide-overlay">
+            <div class="guide-content">
+                <button class="guide-close" id="guide-close">&times;</button>
+                
+                <h1>THRONE</h1>
+                <p class="guide-subtitle">A fast-paced tactical chess variant</p>
+                
+                <h2>How to Start a Game</h2>
+                <div class="guide-steps">
+                    <ol>
+                        <li><strong>Player 1:</strong> Click <span class="hl">"Create Room"</span></li>
+                        <li>Share the 4-letter code (e.g., <span class="hl">AB3X</span>) with your friend</li>
+                        <li><strong>Player 2:</strong> Enter the code and click <span class="hl">"Join Room"</span></li>
+                        <li>Game starts! White moves first.</li>
+                    </ol>
+                </div>
+                
+                <h2>The Board</h2>
+                <p>Played on a <span class="hl">5x5 board</span> - smaller than chess, but every move counts!</p>
+                
+                <div class="board-diagram">
+                    <span class="diagram-label">Black's side</span>
+                    <div class="diagram-row"><span class="black">S</span><span class="black">C</span><span class="black">K</span><span class="black">T</span><span class="black">S</span></div>
+                    <div class="diagram-row"><span>.</span><span>.</span><span>.</span><span>.</span><span>.</span></div>
+                    <div class="diagram-row"><span>.</span><span>.</span><span>.</span><span>.</span><span>.</span></div>
+                    <div class="diagram-row"><span>.</span><span>.</span><span>.</span><span>.</span><span>.</span></div>
+                    <div class="diagram-row"><span class="white">S</span><span class="white">T</span><span class="white">K</span><span class="white">C</span><span class="white">S</span></div>
+                    <span class="diagram-label">White's side</span>
+                </div>
+                
+                <h2>Win Conditions</h2>
+                <div class="win-conditions">
+                    <div class="win-card">
+                        <h4>Capture the King</h4>
+                        <p>Take your opponent's King piece</p>
+                    </div>
+                    <div class="win-card">
+                        <h4>Reach the Throne</h4>
+                        <p>Get YOUR King to the opponent's back row</p>
+                    </div>
+                </div>
+                
+                <h2>The Pieces</h2>
+                <div class="pieces-grid">
+                    <div class="piece-card">
+                        <h4><span class="piece-icon">K</span> King</h4>
+                        <p>Moves 1 square in any direction. Protect it, or race it to victory!</p>
+                    </div>
+                    <div class="piece-card">
+                        <h4><span class="piece-icon">C</span> Champion</h4>
+                        <p>Moves like a Queen, but <strong>max 2 squares</strong>. Your most powerful attacker.</p>
+                    </div>
+                    <div class="piece-card">
+                        <h4><span class="piece-icon">T</span> Tower</h4>
+                        <p>Moves like a Rook (straight lines), but <strong>max 3 squares</strong>.</p>
+                    </div>
+                    <div class="piece-card">
+                        <h4><span class="piece-icon">S</span> Soldier</h4>
+                        <p>Moves 1 square <strong>forward or sideways</strong> only. No backward, no diagonal.</p>
+                    </div>
+                </div>
+                
+                <h2>The Sacrifice System</h2>
+                <div class="sacrifice-section">
+                    <p class="sacrifice-intro">Once per game, sacrifice a piece for a powerful effect!</p>
+                    
+                    <div class="sacrifice-item">
+                        <strong>Sacrifice Soldier</strong>
+                        <span>Champion moves twice this turn</span>
+                    </div>
+                    
+                    <div class="sacrifice-item">
+                        <strong>Sacrifice Tower</strong>
+                        <span>King immune for 1 turn</span>
+                    </div>
+                    
+                    <div class="sacrifice-item">
+                        <strong>Sacrifice Champion</strong>
+                        <span>Instantly kill any adjacent enemy</span>
+                    </div>
+                </div>
+                
+                <h2>Strategy Tips</h2>
+                <div class="tips-section">
+                    <ul>
+                        <li><strong>The King race is real</strong> - Sometimes attacking is the best defense!</li>
+                        <li><strong>Champions are valuable</strong> - Don't trade carelessly.</li>
+                        <li><strong>Soldiers can block</strong> - Use them to protect your King.</li>
+                        <li><strong>Save your sacrifice</strong> - The threat can be as powerful as using it.</li>
+                        <li><strong>Tower lanes</strong> - A Tower controls an entire row or column.</li>
+                    </ul>
+                </div>
+                
+                <h2>Controls</h2>
+                <div class="controls-guide">
+                    <p><span class="hl">Click a piece</span> - Select it (shows valid moves)</p>
+                    <p><span class="hl">Green dots</span> - Valid moves</p>
+                    <p><span class="hl">Red squares</span> - Capture moves</p>
+                    <p><span class="hl">Blue glow</span> - King is immune</p>
+                </div>
+                
+                <p class="guide-footer">Games are fast (5-10 minutes). Have fun!</p>
+            </div>
         </div>
     </div>
 

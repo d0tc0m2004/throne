@@ -554,3 +554,308 @@ button {
 .lobby.hidden, .waiting-screen.hidden {
     display: none;
 }
+
+/* How to Play Button */
+.how-to-play-btn {
+    background: linear-gradient(135deg, #4a9c5d 0%, #2d6a4f 100%);
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.how-to-play-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(74, 156, 93, 0.5);
+}
+
+/* Guide Modal Overlay */
+.guide-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 400;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.guide-overlay.active {
+    display: block;
+}
+
+.guide-content {
+    max-width: 700px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+.guide-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+
+.guide-close:hover {
+    color: #fff;
+}
+
+.guide-content h1 {
+    color: #ffd700;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.guide-subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.guide-content h2 {
+    color: #ffd700;
+    font-size: 1.3rem;
+    margin: 25px 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.guide-content p {
+    color: #ccc;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.hl {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.guide-steps {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 25px;
+    border-radius: 10px;
+}
+
+.guide-steps ol {
+    margin-left: 20px;
+    color: #ccc;
+}
+
+.guide-steps li {
+    margin-bottom: 10px;
+}
+
+/* Board Diagram */
+.board-diagram {
+    background: #2d2d44;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.diagram-label {
+    color: #888;
+    font-size: 0.85rem;
+    display: block;
+    margin: 8px 0;
+}
+
+.diagram-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.diagram-row span {
+    width: 30px;
+    color: #555;
+}
+
+.diagram-row span.black {
+    color: #ff6b6b;
+}
+
+.diagram-row span.white {
+    color: #69db7c;
+}
+
+/* Win Conditions */
+.win-conditions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.win-card {
+    background: rgba(74, 156, 93, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(74, 156, 93, 0.3);
+    text-align: center;
+}
+
+.win-card h4 {
+    color: #4a9c5d;
+    margin-bottom: 8px;
+}
+
+.win-card p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Pieces Grid */
+.pieces-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.piece-card {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.piece-card h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.piece-icon {
+    background: #667eea;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+.piece-card p {
+    color: #aaa;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Sacrifice Section */
+.sacrifice-section {
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(245, 87, 108, 0.1) 100%);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(245, 87, 108, 0.3);
+    margin: 15px 0;
+}
+
+.sacrifice-intro {
+    color: #f5576c;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sacrifice-item {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin: 8px 0;
+}
+
+.sacrifice-item strong {
+    color: #f093fb;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.sacrifice-item span {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Tips Section */
+.tips-section {
+    background: rgba(102, 126, 234, 0.1);
+    padding: 15px 20px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.tips-section ul {
+    margin-left: 20px;
+    color: #ccc;
+}
+
+.tips-section li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+/* Controls Guide */
+.controls-guide {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.controls-guide p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.guide-footer {
+    text-align: center;
+    color: #888;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .guide-content {
+        padding: 25px 20px;
+    }
+    
+    .guide-content h1 {
+        font-size: 2rem;
+    }
+    
+    .pieces-grid, .win-conditions {
+        grid-template-columns: 1fr;
+    }
+    
+    .diagram-row {
+        gap: 10px;
+        font-size: 1.1rem;
+    }
+}

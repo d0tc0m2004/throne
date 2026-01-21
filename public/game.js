@@ -27,6 +27,21 @@ class ThroneGame {
     }
 
     bindLobbyEvents() {
+        // How to Play guide
+        document.getElementById('how-to-play-btn').addEventListener('click', () => {
+            document.getElementById('guide-overlay').classList.add('active');
+        });
+
+        document.getElementById('guide-close').addEventListener('click', () => {
+            document.getElementById('guide-overlay').classList.remove('active');
+        });
+
+        document.getElementById('guide-overlay').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('guide-overlay')) {
+                document.getElementById('guide-overlay').classList.remove('active');
+            }
+        });
+
         document.getElementById('create-room-btn').addEventListener('click', () => {
             this.createRoom();
         });
